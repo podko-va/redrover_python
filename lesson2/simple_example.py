@@ -17,6 +17,7 @@ from selenium.webdriver.support import expected_conditions as EC
 browser = webdriver.Chrome()
 browser.get("http://195.133.27.184/")
 
+
 try:
     element = WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//a[@href='/login/']"))#изменения на странице
@@ -25,3 +26,4 @@ try:
     assert browser.current_url == "http://195.133.27.184/login/", "Wrong URL"
 finally:
     browser.quit()
+

@@ -25,7 +25,8 @@ def test_create_case():
     response.status_code_should_be_eq(200)
     response.json_should_be_eq(Case(**create_case_dict).model_dump())
     response.schema_should_be_eq(Case(**create_case_dict).model_json_schema())    
-    
+ 
+@pytest.mark.only    
 def test_negative_case():
     response = create_case({})
     print(response)
